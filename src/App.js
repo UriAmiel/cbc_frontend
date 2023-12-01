@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import CreateCommunityForm from './CreateCommunityForm';
+import CommunityList from "./CommunityList";
+import {BACKEND_ENDPOINT} from "./Constants";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default function App() {
+    const [communities, setCommunities] = useState([]);
 
-export default App;
+    const handleCreateCommunity = (newCommunity) => {
+        setCommunities([...communities, newCommunity]);
+    };
+
+    const fetchCommunities = async () => {
+        try {
+            const response = await fetch(BACKEND_ENDPOINT + 'community/getAll');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            setCommunities(data);
+        } catch (error) {
+            console.error('Error fetching communities:', error);
+            // Handle error as needed
+        }
+    };
+
+    useEffect(() => {
+        fetchCommunities();
+    }, []);
+
+
+    return (
+        <div>
+            <CommunityList communities={communities}/>
+            <CreateCommunityForm addCommunity={handleCreateCommunity}/>
+        </div>
+    );
+};
