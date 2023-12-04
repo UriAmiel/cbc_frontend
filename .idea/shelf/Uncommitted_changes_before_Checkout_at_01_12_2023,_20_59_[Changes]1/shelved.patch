@@ -1,0 +1,178 @@
+Index: src/Constants.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Constants.js b/src/Constants.js
+deleted file mode 100644
+--- a/src/Constants.js	
++++ /dev/null	
+@@ -1,1 +0,0 @@
+-export const BACKEND_ENDPOINT = 'http://localhost:8080/';
+\ No newline at end of file
+Index: .idea/modules.xml
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	
++++ /dev/null	
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/cbc_frontend.iml" filepath="$PROJECT_DIR$/.idea/cbc_frontend.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/cbc_frontend.iml
+===================================================================
+diff --git a/.idea/cbc_frontend.iml b/.idea/cbc_frontend.iml
+deleted file mode 100644
+--- a/.idea/cbc_frontend.iml	
++++ /dev/null	
+@@ -1,12 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="WEB_MODULE" version="4">
+-  <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+-      <excludeFolder url="file://$MODULE_DIR$/temp" />
+-      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	
++++ /dev/null	
+@@ -1,5 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+Index: src/CommunityList.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/CommunityList.js b/src/CommunityList.js
+deleted file mode 100644
+--- a/src/CommunityList.js	
++++ /dev/null	
+@@ -1,15 +0,0 @@
+-export default function CommunityList({communities}) {
+-    return <div>
+-        <h1>Your communities:</h1>
+-        <ul>
+-            {communities.map( (community,index) => <Community key={index} community={community}/>)}
+-        </ul>
+-    </div>
+-
+-}
+-
+-function Community({community}) {
+-    return <li>
+-        <h3>{community.name}</h3>
+-    </li>
+-}
+\ No newline at end of file
+Index: src/CreateCommunityForm.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/CreateCommunityForm.js b/src/CreateCommunityForm.js
+deleted file mode 100644
+--- a/src/CreateCommunityForm.js	
++++ /dev/null	
+@@ -1,52 +0,0 @@
+-import React, {useState} from 'react';
+-import {BACKEND_ENDPOINT} from './Constants';
+-
+-const ENDPOINT = BACKEND_ENDPOINT + "community/add";
+-export default function CreateCommunityForm({addCommunity}) {
+-    const [communityName, setCommunityName] = useState('');
+-
+-    async function sendCreateCommunityRequest(newCommunity) {
+-        const PROPERTIES_TO_EXCLUDE = ['create_date'];
+-
+-        const filteredCommunity = Object.fromEntries(
+-            Object.entries(newCommunity).filter(([key]) =>
+-                !PROPERTIES_TO_EXCLUDE.includes(key)));
+-
+-        try {
+-            const response = await fetch(ENDPOINT, {
+-                method: 'POST',
+-                headers: {
+-                    'Content-Type': 'application/json',
+-                },
+-                body: JSON.stringify(filteredCommunity),
+-            });
+-            if (!response.ok) {
+-                throw new Error("There was a problem sending create community request");
+-            }
+-        } catch (error) {
+-            console.error('Error:', error);
+-        }
+-    }
+-
+-
+-    const handleSubmit = async (e) => {
+-        e.preventDefault();
+-
+-        const newCommunity = {name: communityName, create_date: new Date()};
+-        await sendCreateCommunityRequest(newCommunity);
+-
+-        addCommunity(newCommunity);
+-        setCommunityName('');
+-    };
+-
+-    return (
+-        <>
+-            <form onSubmit={handleSubmit}>
+-                <label> Community Name: </label>
+-                <input type="text" value={communityName} onChange={(e) => setCommunityName(e.target.value)}/>
+-                <button type="submit">Create</button>
+-            </form>
+-        </>
+-    );
+-}
+-;
+\ No newline at end of file
+Index: src/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport './index.css';\nimport App from './App';\n\nconst root = ReactDOM.createRoot(document.getElementById('root'));\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.js b/src/index.js
+--- a/src/index.js	
++++ b/src/index.js	
+@@ -2,10 +2,16 @@
+ import ReactDOM from 'react-dom/client';
+ import './index.css';
+ import App from './App';
++import reportWebVitals from './reportWebVitals';
+ 
+ const root = ReactDOM.createRoot(document.getElementById('root'));
+ root.render(
+   <React.StrictMode>
+     <App />
+   </React.StrictMode>
+-);
+\ No newline at end of file
++);
++
++// If you want to start measuring performance in your app, pass a function
++// to log results (for example: reportWebVitals(console.log))
++// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
++reportWebVitals();
