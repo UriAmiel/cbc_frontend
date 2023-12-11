@@ -13,9 +13,8 @@ const CreateCommunityForm = ({ addCommunity }) => {
         try {
             const newCommunity = {name: communityName};
             const response = await axios.post(ENDPOINT, newCommunity);
-            console.log(response.data)
 
-            addCommunity(newCommunity);
+            addCommunity(response.data);
             setCommunityName('')
         } catch (error) {
             console.error(error);

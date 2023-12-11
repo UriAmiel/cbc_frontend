@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5df48669-6bf0-4e6f-826b-454a83d1a3f9" name="Changes" comment="Changed to axios">
-      <change afterPath="$PROJECT_DIR$/src/CommunitiesFetcher.js" afterDir="false" />
+    <list default="true" id="5df48669-6bf0-4e6f-826b-454a83d1a3f9" name="Changes" comment="Changed git ignore">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_12_2023,_20_59_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_12_2023__20_59__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommunityList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommunityList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CreateCommunityForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateCommunityForm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +66,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "change-to-axios",
+    "git-widget-placeholder": "change-key-in-community-list",
     "last_opened_file_path": "/Users/shanicohen/Desktop/Uri/cbc_frontend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -95,7 +94,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701456654406</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changed to axios">
+      <option name="closed" value="true" />
+      <created>1702327159434</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702327159434</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changed git ignore">
+      <option name="closed" value="true" />
+      <created>1702327264500</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702327264500</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +130,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Community fetching and viewing" />
     <MESSAGE value="Changed to axios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed to axios" />
+    <MESSAGE value="Changed git ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed git ignore" />
   </component>
 </project>
