@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {BACKEND_ENDPOINT} from "./Constants";
+import axios from 'axios';
 
 const ENDPOINT = BACKEND_ENDPOINT + 'community/add'
 
@@ -11,18 +12,8 @@ const CreateCommunityForm = ({ addCommunity }) => {
 
         try {
             const newCommunity = {name: communityName};
-
-            const response = await fetch(ENDPOINT, {
-                method: 'POST',
-                'headers': {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newCommunity),
-            });
-
-            if (!response.ok) {
-                throw new Error("PROBLEM!");
-            }
+            const response = await axios.post(ENDPOINT, newCommunity);
+            console.log(response.data)
 
             addCommunity(newCommunity);
             setCommunityName('')
