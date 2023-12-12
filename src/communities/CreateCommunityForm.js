@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {BACKEND_ENDPOINT} from "./Constants";
+import {BACKEND_ENDPOINT} from "../Constants";
 import axios from 'axios';
 
 const ENDPOINT = BACKEND_ENDPOINT + 'community/add'

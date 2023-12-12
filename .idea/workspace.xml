@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5df48669-6bf0-4e6f-826b-454a83d1a3f9" name="Changes" comment="Changed git ignore">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_12_2023,_20_59_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_12_2023__20_59__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="5df48669-6bf0-4e6f-826b-454a83d1a3f9" name="Changes" comment="When clicking on community you know pass its value to ride fetcher">
+      <change afterPath="$PROJECT_DIR$/src/communities/CommunityList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rides/RideFetcher.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommunityList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommunityList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CreateCommunityForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateCommunityForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommunitiesFetcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/communities/CommunitiesFetcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommunityList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CreateCommunityForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/communities/CreateCommunityForm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="change-key-in-community-list" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,7 +68,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "change-key-in-community-list",
+    "git-widget-placeholder": "add-click-on-community-functionallity",
     "last_opened_file_path": "/Users/shanicohen/Desktop/Uri/cbc_frontend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -76,6 +78,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/communities" />
+      <recent name="$PROJECT_DIR$/src/rides" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -110,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702327264500</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changed git ignore">
+      <option name="closed" value="true" />
+      <created>1702332161995</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702332161995</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +147,7 @@
     <MESSAGE value="Community fetching and viewing" />
     <MESSAGE value="Changed to axios" />
     <MESSAGE value="Changed git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed git ignore" />
+    <MESSAGE value="When clicking on community you know pass its value to ride fetcher" />
+    <option name="LAST_COMMIT_MESSAGE" value="When clicking on community you know pass its value to ride fetcher" />
   </component>
 </project>
