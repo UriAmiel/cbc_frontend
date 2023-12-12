@@ -1,4 +1,4 @@
-import {BACKEND_ENDPOINT} from "./Constants";
+import {BACKEND_ENDPOINT} from "../Constants";
 import {useEffect} from "react";
 import axios from "axios";
 
