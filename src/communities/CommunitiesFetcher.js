@@ -5,13 +5,13 @@ import axios from "axios";
 const ENDPOINT = BACKEND_ENDPOINT + 'community/getAll';
 export default function CommunitiesFetcher({setCommunities}) {
 
-    const fetchCommunities = async () => {
+    async function fetchCommunities() {
         try {
             const response = await axios.get(ENDPOINT);
             setCommunities(response.data);
         } catch (error) {
             console.error('Error fetching communities:', error);
-            // Handle error as needed
+            //TODO: Handle error as needed
         }
     };
 
