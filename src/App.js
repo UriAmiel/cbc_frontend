@@ -14,7 +14,7 @@ export default function App() {
     }
 
     function handleShowRide(community) {
-        if (community?.id === communityToShowRide?.id){
+        if (community?.id === communityToShowRide?.id) {
             setShouldShowRide(shouldShowRide => !shouldShowRide);
         }
         setCommunityToShowRide(community);
