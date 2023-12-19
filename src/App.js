@@ -1,31 +1,22 @@
 import React, {useState} from 'react';
-import CreateCommunityForm from './communities/CreateCommunityForm';
-import CommunityList from "./communities/CommunityList";
-import CommunitiesFetcher from "./communities/CommunitiesFetcher";
-import RideFetcher from "./rides/RideFetcher";
+import CommunityView from "./communities/CommunityView";
+import RideView from "./rides/RideView";
 
 export default function App() {
-    const [communities, setCommunities] = useState([]);
     const [communityToShowRide, setCommunityToShowRide] = useState(null);
-    const [shouldShowRide, setShouldShowRide] = useState(true);
+    const [shouldShowCommunityRide, setShouldShowCommunityRide] = useState(true);
 
-    function handleCreateCommunity(newCommunity) {
-        setCommunities([...communities, newCommunity]);
-    }
-
-    function handleShowRide(community) {
+    function handleClickingOnCommunity(community) {
         if (community?.id === communityToShowRide?.id) {
-            setShouldShowRide(shouldShowRide => !shouldShowRide);
+            setShouldShowCommunityRide(shouldShowRide => !shouldShowRide);
         }
         setCommunityToShowRide(community);
     }
 
     return (
         <div>
-            <CommunitiesFetcher setCommunities={setCommunities}/>
-            <CommunityList communities={communities} handleShowRide={handleShowRide}/>
-            <CreateCommunityForm addCommunity={handleCreateCommunity}/>
-            {shouldShowRide && <RideFetcher communityToShowRides={communityToShowRide}/>}
+            <CommunityView onCommunityClick={handleClickingOnCommunity}/>
+            {shouldShowCommunityRide && <RideView communityToShowRide={communityToShowRide}/>}
         </div>
     );
 };
