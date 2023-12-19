@@ -1,16 +1,17 @@
 import {BACKEND_ENDPOINT} from "../Constants";
 import axios from "axios";
 import {useEffect, useState} from "react";
+import RideList from "./RideList";
 
 const ENDPOINT = BACKEND_ENDPOINT + 'ride/get/';
 
 export default function RideFetcher({communityToShowRides}) {
-    const [rides, setRides] = useState();
+    const [communityRides, setCommunityRides] = useState([]);
 
     async function fetchRidesForCommunity() {
         try {
             const response = await axios.get(ENDPOINT + communityToShowRides.id);
-            setRides(response.data);
+            setCommunityRides(response.data.community_rides);
         } catch (error) {
             console.error('Error fetching communities:', error);
             //TODO: Handle error as needed
@@ -23,6 +24,5 @@ export default function RideFetcher({communityToShowRides}) {
         }
     }, [communityToShowRides]);
 
-    // need to implement the fetching
-    return <h2>{rides}</h2>
+    return <RideList rides={communityRides}/>
 }
