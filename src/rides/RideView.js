@@ -7,6 +7,6 @@ export default function RideView({communityToShowRide}) {
 
     return <div>
         <RideFetcher communityToShowRides={communityToShowRide} setCommunityRides={setCommunityRides}/>
-        <RideList rides={communityRides}/>
+        <RideList rides={communityRides} communityName={communityToShowRide.name}/>
     </div>
 }
