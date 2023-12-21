@@ -4,7 +4,7 @@ import RideView from "./rides/RideView";
 
 export default function App() {
     const [communityToShowRide, setCommunityToShowRide] = useState(null);
-    const [shouldShowCommunityRide, setShouldShowCommunityRide] = useState(true);
+    const [shouldShowCommunityRide, setShouldShowCommunityRide] = useState(false);
 
     function handleClickingOnCommunity(community) {
         if (community?.id === communityToShowRide?.id) {

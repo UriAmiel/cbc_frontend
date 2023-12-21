@@ -1,17 +1,15 @@
-import {BACKEND_ENDPOINT} from "../Constants";
-import axios from "axios";
 import {useEffect} from "react";
-
-const ENDPOINT = BACKEND_ENDPOINT + 'ride/get/';
+import ApiFetcher from "../utilities/api/fetcher/ApiFetcher";
 
 export default function RideFetcher({communityToShowRides, setCommunityRides}) {
     async function fetchRidesForCommunity() {
-        try {
-            const response = await axios.get(ENDPOINT + communityToShowRides.id);
-            setCommunityRides(response.data.community_rides);
-        } catch (error) {
-            console.error('Error fetching communities:', error);
-            //TODO: Handle error as needed
+        const dataFromApi = await ApiFetcher({
+            path: 'ride/get/',
+            params: communityToShowRides.id
+        });
+
+        if (dataFromApi.community_rides) {
+            setCommunityRides(dataFromApi.community_rides);
         }
     }
 
