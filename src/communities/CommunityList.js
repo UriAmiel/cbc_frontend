@@ -1,6 +1,7 @@
 export default function CommunityList({communities, onCommunityClick}) {
     return <div>
         <h1>Your communities:</h1>
+        <h2>You have {communities.length} communities</h2>
         <ul>
             {communities.map(community => <CommunityCard key={community.id} community={community}
                                                          onCommunityClick={onCommunityClick}/>)}
