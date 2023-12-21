@@ -1,13 +1,10 @@
 import {BACKEND_ENDPOINT} from "../Constants";
 import axios from "axios";
-import {useEffect, useState} from "react";
-import RideList from "./RideList";
+import {useEffect} from "react";
 
 const ENDPOINT = BACKEND_ENDPOINT + 'ride/get/';
 
-export default function RideFetcher({communityToShowRides}) {
-    const [communityRides, setCommunityRides] = useState([]);
-
+export default function RideFetcher({communityToShowRides, setCommunityRides}) {
     async function fetchRidesForCommunity() {
         try {
             const response = await axios.get(ENDPOINT + communityToShowRides.id);
@@ -23,6 +20,4 @@ export default function RideFetcher({communityToShowRides}) {
             fetchRidesForCommunity();
         }
     }, [communityToShowRides]);
-
-    return <RideList rides={communityRides}/>
 }

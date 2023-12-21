@@ -1,6 +1,12 @@
 import RideFetcher from "./RideFetcher";
-import React from "react";
+import React, {useState} from "react";
+import RideList from "./RideList";
 
 export default function RideView({communityToShowRide}) {
-    return <RideFetcher communityToShowRides={communityToShowRide}/>
+    const [communityRides, setCommunityRides] = useState([]);
+
+    return <div>
+        <RideFetcher communityToShowRides={communityToShowRide} setCommunityRides={setCommunityRides}/>
+        <RideList rides={communityRides}/>
+    </div>
 }
