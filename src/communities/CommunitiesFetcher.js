@@ -1,13 +1,11 @@
-import {BACKEND_ENDPOINT} from "../Constants";
 import {useEffect} from "react";
 import ApiFetcher from "../utilities/api/fetcher/ApiFetcher";
 
-const ENDPOINT = BACKEND_ENDPOINT + 'community/getAll';
 export default function CommunitiesFetcher({setCommunities}) {
 
-    async function fetchData() {
+    async function fetchCommunities() {
         const dataFromApi = await ApiFetcher({
-            endpoint: ENDPOINT
+            path: 'community/getAll'
         });
 
         if (dataFromApi) {
@@ -16,6 +14,6 @@ export default function CommunitiesFetcher({setCommunities}) {
     }
 
     useEffect(() => {
-        fetchData();
+        fetchCommunities();
     }, []);
 }

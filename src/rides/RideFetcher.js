@@ -1,13 +1,10 @@
-import {BACKEND_ENDPOINT} from "../Constants";
 import {useEffect} from "react";
 import ApiFetcher from "../utilities/api/fetcher/ApiFetcher";
-
-const ENDPOINT = BACKEND_ENDPOINT + 'ride/get/';
 
 export default function RideFetcher({communityToShowRides, setCommunityRides}) {
     async function fetchRidesForCommunity() {
         const dataFromApi = await ApiFetcher({
-            endpoint: ENDPOINT,
+            path: 'ride/get/',
             params: communityToShowRides.id
         });
 
